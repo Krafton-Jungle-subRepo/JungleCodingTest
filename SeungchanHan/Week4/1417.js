@@ -1,6 +1,6 @@
 const fs = require('fs');
 const filePath =
-  process.platform === 'linux' ? '/dev/stdin' : '100-구현/1417/example.txt';
+  process.platform === 'linux' ? '/dev/stdin' : 'SeungchanHan/Week4/1417.txt';
 
 const input = fs
   .readFileSync(filePath)
@@ -10,7 +10,7 @@ const input = fs
   .map(Number);
 
 let num = input.shift();
-let dasom = input.shift();
+let da = input.shift();
 
 if (num === 1) {
   console.log(0);
@@ -18,10 +18,10 @@ if (num === 1) {
   let max = Math.max(...input);
   let answer = 0;
 
-  while (dasom <= max) {
+  while (da <= max) {
     input[input.indexOf(max)] -= 1;
     answer++;
-    dasom++;
+    da++;
     max = Math.max(...input);
   }
   console.log(answer);

@@ -1,6 +1,6 @@
 const fs = require('fs');
 const filePath =
-  process.platform === 'linux' ? '/dev/stdin' : '100-구현/1966/example.txt';
+  process.platform === 'linux' ? '/dev/stdin' : 'SeungchanHan/Week4/1966.txt';
 
 const input = fs.readFileSync(filePath).toString().trim().split('\n');
 

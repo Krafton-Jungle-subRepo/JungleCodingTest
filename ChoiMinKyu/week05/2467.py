@@ -3,7 +3,6 @@ input = sys.stdin.readline
 
 N = int(input())
 solutions = list(map(int,input().split()))
-solutions.sort()
 
 left = 0
 right = N-1

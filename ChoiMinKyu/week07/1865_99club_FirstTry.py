@@ -15,11 +15,11 @@ def bellmanFord(start):
             # 시작 노드 + 비용 더한 값이 현재 비용보다 작다면 배열 갱신
             if (distance[curr] != INF and distance[next] > distance[curr] + cost):
                 distance[next] = distance[curr] + cost
-    # 음수 루프가 존재하는지 확인, 있으면 True 리턴
+    
     for curr, next, cost in edges:
         if distance[curr] != INF and distance[next] > distance[curr] + cost:
             return True
-    # 없으면 False 리턴 
+    
     return False
         
 
@@ -44,15 +44,12 @@ for _ in range(TC):
     for _ in range(W):
         S,E,T = map(int,input().split())
         edges.append((S,E,-T))
-    # 가능 여부 할당할 플래그
+    # 결과에 대한 플래그
     is_possible = False
-    # 모든 지점에 대해 출발
     for start in range(1, N+1):
-        # distance 초기화
         distance = [INF] * (N+1)
-        # bellmanFord 수행 중 음수 루프가 존재한다면 플래그 True로
         if bellmanFord(start):
             is_possible = True
             break
-    # 결과 출력
+    
     print("YES" if is_possible else "NO")

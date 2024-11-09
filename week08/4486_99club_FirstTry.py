@@ -25,7 +25,6 @@ while (1):
     N = int(input())
     if N == 0:
         break
-   
     graph = []
     for i in range(N):
         graph.append(list(map(int,input().split())))
